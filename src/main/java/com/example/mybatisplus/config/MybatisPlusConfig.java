@@ -24,17 +24,17 @@ public class MybatisPlusConfig {
         return new PaginationInterceptor();
     }
 
-    @ConfigurationProperties("spring.datasource")
-    @Bean(initMethod = "init", destroyMethod = "close")
-    public DruidDataSource dataSource() {
-        DruidDataSource druidDataSource = new DruidDataSource();
-        druidDataSource.setProxyFilters(Collections.singletonList(rewriteSqlDruidFilter()));
-        return druidDataSource;
-    }
-
-    @Bean
-    public FilterAdapter rewriteSqlDruidFilter() {
-        return new RewriteSqlDruidFilter();
-    }
+//    @ConfigurationProperties("spring.datasource")
+//    @Bean(initMethod = "init", destroyMethod = "close")
+//    public DruidDataSource dataSource() {
+//        DruidDataSource druidDataSource = new DruidDataSource();
+//        druidDataSource.setProxyFilters(Collections.singletonList(rewriteSqlDruidFilter()));
+//        return druidDataSource;
+//    }
+//
+//    @Bean
+//    public FilterAdapter rewriteSqlDruidFilter() {
+//        return new RewriteSqlDruidFilter();
+//    }
 
 }
