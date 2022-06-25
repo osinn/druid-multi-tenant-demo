@@ -20,8 +20,8 @@ public class TenantDemo {
         defaultSqlParser.setTenantInfoHandler(new TenantInfoHandler() {
             @Override
             public List getTenantIds() {
-                Long tenantId = 12121L;
-                Long tenantId2 = 111111L;
+                Long tenantId = 1540616714700591104L;
+                Long tenantId2 = 1540616731523944448L;
                 List<Long> tenantIdList = new ArrayList<>();
                 tenantIdList.add(tenantId);
                 tenantIdList.add(tenantId2);
