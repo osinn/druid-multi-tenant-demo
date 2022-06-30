@@ -15,7 +15,18 @@ spring:
 mybatis:
   tenant:
     config:
-      mybatis-enable: true
+      # 是否使用MyBatis拦截器方式修改sql,需要禁用druidFilterEnable
+      enable: true
+      # 数据库方言
+      db-type: mysql
+      # 是否忽略表按租户ID过滤,默认所有表都按租户ID过滤，指定表名称
+      ignore-table-name:
+        #        - user
+        - user_role
+      # 数据库中租户ID的列名
+      tenant-id-column: tenant_id
+      # 是否使用druid过滤器方式修改sql,需要禁用enable
+      druid-filter-enable: false
 mybatis-plus:
   mapper-locations: classpath*:mapper/*.xml
   configuration:
