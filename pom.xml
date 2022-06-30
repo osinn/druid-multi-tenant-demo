@@ -27,7 +27,7 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>com.github.osinn</groupId>
+			<groupId>io.github.osinn</groupId>
 			<artifactId>druid-multi-tenant-starter</artifactId>
 			<version>1.0</version>
 		</dependency>
