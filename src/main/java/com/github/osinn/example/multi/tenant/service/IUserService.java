@@ -1,8 +1,8 @@
-package com.example.mybatisplus.service;
+package com.github.osinn.example.multi.tenant.service;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.example.mybatisplus.entity.User;
+import com.github.osinn.example.multi.tenant.entity.User;
 
 import java.util.List;
 

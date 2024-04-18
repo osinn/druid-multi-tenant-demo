@@ -1,4 +1,4 @@
-package com.example.mybatisplus.entity;
+package com.github.osinn.example.multi.tenant.entity;
 
 import java.util.Date;
 import java.util.List;
@@ -6,8 +6,6 @@ import java.util.List;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
-import lombok.Generated;
-import lombok.Setter;
 
 /**
  * 用户表

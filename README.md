@@ -1,4 +1,4 @@
-# springBoot-mybatis-plus-demo
+# druid-multi-tenant-demo
 
 #### 项目介绍
-springBoot整合mybatis-plus
+- druid-multi-tenant-starter 多租户插件演示

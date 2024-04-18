@@ -2,7 +2,6 @@
 server:
     port: 9911
 
-#spring
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
@@ -15,27 +14,17 @@ spring:
 mybatis:
   tenant:
     config:
-      # 是否使用MyBatis拦截器方式修改sql,需要禁用druidFilterEnable
+      # 是否启用多租户插件
       enable: true
-      # 数据库方言
-      db-type: mysql
-      # 是否忽略表按租户ID过滤,默认所有表都按租户ID过滤，指定表名称
-      ignore-table-name:
-        #        - user
-        - user_role
       # 数据库中租户ID的列名
       tenant-id-column: tenant_id
-      # 是否使用druid过滤器方式修改sql,需要禁用enable
-      druid-filter-enable: false
+
 mybatis-plus:
-  mapper-locations: classpath*:mapper/*.xml
+  global-config:
+    db-config:
+      id-type: ASSIGN_ID
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+  mapper-locations: classpath*:**/mapper/**/*Mapper.xml
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-    map-underscore-to-camel-case: true
-    cache-enabled: true
-    lazy-loading-enabled: true
-    multiple-result-sets-enabled: true
-    use-generated-keys: true
-    default-statement-timeout: 60
-    default-fetch-size: 100
-  type-aliases-package: com.example.mybatisplus.entity

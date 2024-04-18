@@ -1,4 +1,4 @@
-package com.example.mybatisplus.entity;
+package com.github.osinn.example.multi.tenant.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;

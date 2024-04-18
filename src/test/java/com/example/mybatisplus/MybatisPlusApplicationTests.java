@@ -1,17 +1,14 @@
 package com.example.mybatisplus;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.example.mybatisplus.entity.User;
-import com.example.mybatisplus.service.IUserService;
-import com.github.osinn.druid.multi.tenant.plugin.handler.TenantInfoHandler;
-import com.github.osinn.druid.multi.tenant.plugin.parser.DefaultSqlParser;
+import com.github.osinn.example.multi.tenant.entity.User;
+import com.github.osinn.example.multi.tenant.service.IUserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RunWith(SpringRunner.class)

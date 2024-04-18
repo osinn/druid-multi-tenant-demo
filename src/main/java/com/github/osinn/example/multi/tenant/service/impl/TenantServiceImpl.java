@@ -1,4 +1,4 @@
-package com.example.mybatisplus.service.impl;
+package com.github.osinn.example.multi.tenant.service.impl;
 
 import com.github.osinn.druid.multi.tenant.plugin.service.ITenantService;
 import org.springframework.stereotype.Service;
@@ -15,7 +15,7 @@ import java.util.List;
 public class TenantServiceImpl implements ITenantService<Long> {
     @Override
     public List<Long> getTenantIds() {
-        Long tenantId = 1540616714700591104L;
+        Long tenantId = 1L;
         Long tenantId2 = 1540616731523944448L;
         List<Long> tenantIdList = new ArrayList<>();
         tenantIdList.add(tenantId);

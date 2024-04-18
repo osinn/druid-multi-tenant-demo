@@ -1,4 +1,4 @@
-package com.example.mybatisplus;
+package com.github.osinn.example.multi.tenant;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * @author czw
  */
-@MapperScan("com.example.mybatisplus.mapper")
+@MapperScan("com.github.osinn.example.multi.tenant.mapper")
 @SpringBootApplication
 public class MybatisPlusApplication {
 

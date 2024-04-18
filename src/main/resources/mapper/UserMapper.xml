@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.mybatisplus.mapper.UserMapper">
+<mapper namespace="com.github.osinn.example.multi.tenant.mapper.UserMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.example.mybatisplus.entity.User">
+    <resultMap id="BaseResultMap" type="com.github.osinn.example.multi.tenant.entity.User">
         <id column="id" property="id" />
         <result column="name" property="name" />
         <result column="age" property="age" />
@@ -13,7 +13,7 @@
         <result column="phone" property="phone" />
     </resultMap>
     <!-- 通用查询映射结果 -->
-    <resultMap id="pageResultMap" type="com.example.mybatisplus.entity.User">
+    <resultMap id="pageResultMap" type="com.github.osinn.example.multi.tenant.entity.User">
         <id column="id" property="id" />
         <result column="name" property="name" />
         <result column="age" property="age" />
@@ -21,7 +21,7 @@
         <result column="test_date" property="testDate" />
         <result column="role" property="role" />
         <result column="phone" property="phone" />
-        <collection property="roleList" ofType="com.example.mybatisplus.entity.Role">
+        <collection property="roleList" ofType="com.github.osinn.example.multi.tenant.entity.Role">
             <id column="r_id" property="id" />
             <result column="r_name" property="name" />
         </collection>
@@ -47,5 +47,13 @@
             `user` u
                 LEFT JOIN user_role ur ON ur.user_id = u.id
                 LEFT JOIN role r ON r.id = ur.role_id
+    </select>
+
+    <select id="getUserInfoById" resultType="com.github.osinn.example.multi.tenant.entity.User">
+        select * from user where id = #{userId}
+    </select>
+
+    <select id="getUserInfo2ById" resultType="com.github.osinn.example.multi.tenant.entity.User">
+        select * from user where id = #{userId} and tenant_id = 1234
     </select>
 </mapper>
