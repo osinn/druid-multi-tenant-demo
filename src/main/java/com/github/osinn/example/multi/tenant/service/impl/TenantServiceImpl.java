@@ -13,6 +13,11 @@ import java.util.List;
  */
 @Service
 public class TenantServiceImpl implements ITenantService<Long> {
+
+   TenantServiceImpl() {
+        System.out.println("TenantServiceImpl init");
+    }
+
     @Override
     public List<Long> getTenantIds() {
         Long tenantId = 1L;
@@ -21,5 +26,24 @@ public class TenantServiceImpl implements ITenantService<Long> {
         tenantIdList.add(tenantId);
 //        tenantIdList.add(tenantId2);
         return tenantIdList;
+    }
+
+    @Override
+    public String customizeParser(String originalSQL, Object paramTenantId) {
+        System.out.println("开发者自己处理解析设置租户ID，不使用内置的解析逻辑");
+        return null;
+    }
+
+    @Override
+    public String before(String originalSQL, Object paramTenantId) {
+        System.out.println("执行默认解析逻辑前 执行了 before方法");
+        return null;
+    }
+
+    @Override
+    public String after(String newSQL, Object paramTenantId) {
+        System.out.println("执行默认解析逻辑后 执行了 after方法");
+//        return newSQL + " and tenant_id = 123456";
+        return null;
     }
 }
