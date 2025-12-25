@@ -2,6 +2,7 @@ package com.github.osinn.example.multi.tenant.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.github.osinn.druid.multi.tenant.plugin.annotation.IgnoreTenantIdField;
 import com.github.osinn.example.multi.tenant.entity.User;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -21,7 +22,8 @@ public interface UserMapper extends BaseMapper<User> {
     @Select("select * from user")
     List<User> selectListBySQL();
 
-    List<User> selectUserAll();
+    @IgnoreTenantIdField
+    List<User> selectUserAll(Long id);
 
     List<User> pageUser(Page<User> page);
 

@@ -27,8 +27,17 @@ public class DemoController {
     private UserMapper userMapper;
 
     @RequestMapping("/test")
-    public String test() {
+    public List<User> test() {
         List<User> users = userService.selectUserAll();
+        users.forEach(user -> {
+
+            System.out.println(user);
+        });
+        return users;
+    }
+    @RequestMapping("/selectUserAll")
+    public String selectUserAll() {
+        List<User> users = userMapper.selectUserAll(13L);
         users.forEach(user -> {
 
             System.out.println(user);

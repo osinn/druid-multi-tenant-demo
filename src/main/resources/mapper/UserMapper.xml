@@ -35,7 +35,7 @@
         DELETE FROM USER
     </delete>
     <select id="selectUserAll" resultMap="BaseResultMap">
-        SELECT test_id as id, name, age, test_type FROM USER
+        SELECT id, name, age, test_type FROM USER
     </select>
 
     <select id="pageUser" resultMap="pageResultMap">
