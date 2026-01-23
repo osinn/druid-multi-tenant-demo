@@ -11,6 +11,8 @@ import com.github.osinn.example.multi.tenant.mapper.UserMapper;
 import com.github.osinn.example.multi.tenant.service.IUserService;
 import org.springframework.stereotype.Service;
 
+import static com.baomidou.mybatisplus.extension.toolkit.SqlHelper.retBool;
+
 /**
  *
  * User 表数据服务层接口实现类

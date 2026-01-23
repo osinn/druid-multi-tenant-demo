@@ -45,6 +45,16 @@ public class DemoController {
         return "OK";
     }
 
+    @RequestMapping("/selectListBySQL")
+    public String selectListBySQL() {
+        List<User> users = userService.selectListBySQL();
+        users.forEach(user -> {
+
+            System.out.println(user);
+        });
+        return "OK";
+    }
+
 
     @RequestMapping("/testMapperTenantId")
     public User testMapperTenantId() {
